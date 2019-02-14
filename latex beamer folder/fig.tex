@@ -1,1 +1,38 @@
 
+\documentclass[10pt,a4paper]{article}
+\usepackage{tikz}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usetkzobj{all}
+\begin{document}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+
+\begin{tikzpicture}
+[
+ scale=2,
+  >=stealth,
+  point/.style = {draw, circle, fill = black, inner sep = 1pt},
+]
+
+\node (A) at (2,-6) [point,label = below:$A$] {};
+\node (B) at (5,2)[point,label = above right:$B$] {};
+\node (C) at (-2,2)[point,label = below left :$C$] {};
+\draw (A) -- (B) -- (C) -- (A);
+
+\node (D) at (2,2) [point,label = above:$D {(2,2)}$] {};
+\draw (A) -- (D);
+\tkzMarkRightAngle[fill = blue!20,size=.2](A,D,C)
+
+\node (E) at (-0.6,-0.8)[point,label = above left:$E {(-0.6,-0.8)}$] {};
+\draw (B) -- (E);
+\tkzMarkRightAngle[fill = blue!40,size=.2](B,E,C)
+
+\node (F) at (4.1369,-0.3013)[point,label = above right:$F {(4.137,-0.301)}$] {};
+\draw (C) -- (F);
+\tkzMarkRightAngle[fill = blue!60,size=.2](A,F,C)
+
+\node (H) at (2,0.5) [point,label = above:$H {(2,0.5)}$] {};
+
+\end{tikzpicture}
+
+
+\end{document}
